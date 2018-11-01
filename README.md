@@ -80,8 +80,21 @@ application, follow these steps:
     ```sh
     $ npm start
 
-    Server is running on port 3000
+    Server is running at http://[::1]:3000
+    OASGraph ready at http://localhost:3001/graphql
     ```
+
+3.  Go to http://localhost:3001/graphql and write your first graph query
+
+
+    ```sh
+        {
+           todoListsTodos(id: 1){
+               title
+            }
+        }
+    ```
+
 
 Feel free to look around in the application's code to get a feel for how it
 works. If you're interested in how it's been built or why we do things a certain
