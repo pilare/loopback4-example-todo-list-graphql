@@ -10,6 +10,14 @@ const rest_1 = require("@loopback/rest");
 const sequence_1 = require("./sequence");
 class TodoListApplication extends boot_1.BootMixin(repository_1.RepositoryMixin(rest_1.RestApplication)) {
     constructor(options = {}) {
+        options = Object.assign({}, {
+            rest: {
+                port: 3000,
+                openApiSpec: {
+                    servers: [{ url: 'http://127.0.0.1:3000' }]
+                }
+            }
+        });
         super(options);
         // Set up the custom sequence
         this.sequence(sequence_1.MySequence);
